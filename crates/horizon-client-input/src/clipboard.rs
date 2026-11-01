@@ -491,3 +491,25 @@ mod tests {
         assert_eq!(value, "ok");
     }
 }
+
+/// Android has no system clipboard backend yet: the game keeps its own copy.
+#[cfg(target_os = "android")]
+mod arboard {
+    pub struct Clipboard;
+    #[derive(Debug)]
+    pub enum Error {
+        ContentNotAvailable,
+        Unavailable,
+    }
+    impl Clipboard {
+        pub fn new() -> Result<Self, Error> {
+            Err(Error::Unavailable)
+        }
+        pub fn get_text(&mut self) -> Result<String, Error> {
+            Err(Error::Unavailable)
+        }
+        pub fn set_text(&mut self, _text: String) -> Result<(), Error> {
+            Err(Error::Unavailable)
+        }
+    }
+}

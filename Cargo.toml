@@ -35,6 +35,7 @@ members = [
     "crates/horizon-shader-api",
     "crates/horizon-release-sign",
     "xtask",
+    "crates/horizon-android",
 ]
 resolver = "2"
 
