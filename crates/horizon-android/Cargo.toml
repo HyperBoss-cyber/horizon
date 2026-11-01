@@ -11,3 +11,19 @@ crate-type = ["cdylib"]
 [dependencies]
 horizon-client = { path = "../horizon-client", default-features = false }
 winit = { version = "0.30.13", features = ["android-native-activity"] }
+
+[package.metadata.android]
+package = "dev.horizon.mobile"
+apk_name = "Horizon"
+build_targets = ["aarch64-linux-android"]
+
+[package.metadata.android.sdk]
+min_sdk_version = 26
+target_sdk_version = 34
+
+[[package.metadata.android.uses_permission]]
+name = "android.permission.INTERNET"
+
+[package.metadata.android.signing.release]
+path = "$HOME/.android/debug.keystore"
+keystore_password = "android"
