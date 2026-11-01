@@ -25,5 +25,5 @@ target_sdk_version = 34
 name = "android.permission.INTERNET"
 
 [package.metadata.android.signing.release]
-path = "$HOME/.android/debug.keystore"
+path = "/home/runner/.android/debug.keystore"
 keystore_password = "android"
